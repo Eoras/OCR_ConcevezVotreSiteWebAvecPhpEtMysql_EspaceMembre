@@ -1,0 +1,18 @@
+<?php
+// Connection configuration to the database:
+$db_nameDataBase = "";
+$db_user = "";
+$db_pass = "";
+
+// Setup of the blog:
+$messagesPerPage = 5;
+
+// reCaptcha Google:
+$reCaptchaGoogle_Secret = "";
+$reCaptchaGoogle_dataSiteKey = "";
+
+try {
+    $dbManager = new PDO("mysql:host=localhost;dbname=$db_nameDataBase;charset=utf8", $db_user, $db_pass, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+} catch (Exception $e) {
+    die('Error: ' . $e->getMessage());
+}
